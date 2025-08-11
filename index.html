@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan Wadhwani - Software Engineer & Data Scientist</title>
+    <meta name="description" content="Full-stack & Systems Software Engineer specializing in C++/Python, React, cloud-ready ML, and high-performance data structures.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Floating Particles -->
+    <div class="floating-particles" id="floatingParticles"></div>
+    
+    <!-- Morphing Shapes -->
+    <div class="morphing-shape" style="top: 10%; left: 5%;"></div>
+    <div class="morphing-shape" style="top: 60%; right: 10%;"></div>
+    <div class="morphing-shape" style="bottom: 20%; left: 15%;"></div>
+    
+    <!-- Circuit Board Pattern -->
+    <svg class="circuit-svg" viewBox="0 0 1000 1000">
+        <path class="circuit-path" d="M100,100 L300,100 L300,200 L500,200 L500,300 L700,300 L700,400 L900,400" />
+        <path class="circuit-path" d="M100,500 L200,500 L200,600 L400,600 L400,700 L600,700 L600,800 L800,800" />
+        <circle class="neural-node" cx="100" cy="100" r="5" />
+        <circle class="neural-node" cx="300" cy="100" r="5" />
+        <circle class="neural-node" cx="500" cy="200" r="5" />
+        <circle class="neural-node" cx="700" cy="300" r="5" />
+        <circle class="neural-node" cx="900" cy="400" r="5" />
+    </svg>
+    
+    <!-- Energy Fields -->
+    <div class="energy-field" style="top: 20%; right: 20%;"></div>
+    <div class="energy-field" style="bottom: 30%; left: 25%;"></div>
+    
+    <!-- Data Streams -->
+    <div class="data-stream" style="top: 15%; width: 200px; left: 10%;"></div>
+    <div class="data-stream" style="top: 75%; width: 150px; right: 15%;"></div>
+    
+    <!-- Quantum Particles -->
+    <div class="quantum-particle" style="top: 25%; left: 30%;"></div>
+    <div class="quantum-particle" style="top: 65%; right: 25%;"></div>
+    <div class="quantum-particle" style="bottom: 40%; left: 60%;"></div>
+    
+    <!-- Holographic Scan Lines -->
+    <div class="hologram-scan" style="top: 50%;"></div>
+    <div class="hologram-scan" style="top: 80%;"></div>
+
+    <!-- Interactive Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-particles">
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+            <div class="welcome-particle"></div>
+        </div>
+        <div class="welcome-content">
+            <div class="welcome-logo" id="welcomeLogo">
+                <span class="neon-text">ADW</span>
+            </div>
+            <h1 class="welcome-title">Welcome to My Portfolio</h1>
+            <p class="welcome-subtitle">Software Engineer & Data Scientist</p>
+            <div class="welcome-interactive">
+                <button class="welcome-btn auto-progress" id="enterPortfolio">
+                    <div class="btn-content">
+                        <i class="fas fa-rocket"></i>
+                        Enter Portfolio
+                    </div>
+                </button>
+                <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/Aaryan_Wadhwani_Fall_AiCsUg_25.pdf" target="_blank" class="welcome-btn" id="viewResume">
+                    <div class="btn-content">
+                        <i class="fas fa-file-alt"></i>
+                        View Resume
+                    </div>
+                </a>
+                <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/transcript.pdf" target="_blank" class="welcome-btn" id="viewTranscript">
+                    <div class="btn-content">
+                        <i class="fas fa-graduation-cap"></i>
+                        View Transcript
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="holographic">ADW</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#coursework" class="nav-link">Coursework</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/Aaryan_Wadhwani_Fall_AiCsUg_25.pdf" target="_blank" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        Resume
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/transcript.pdf" target="_blank" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        Transcript
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Available for opportunities</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="name-first">Aaryan</span>
+                        <span class="name-last">Wadhwani</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text" id="typingText"></span>
+                    </h2>
+                    <p class="hero-description">
+                        Crafting intelligent solutions at the intersection of AI/ML, full-stack development, 
+                        and cloud architecture. Building the future, one algorithm at a time.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">
+                            <i class="fas fa-user"></i>
+                            Learn More
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-paper-plane"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                    
+                    <div class="hero-documents">
+                        <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/Aaryan_Wadhwani_Fall_AiCsUg_25.pdf" target="_blank" class="btn btn-document">
+                            <i class="fas fa-file-alt"></i>
+                            Resume
+                        </a>
+                        <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/transcript.pdf" target="_blank" class="btn btn-document">
+                            <i class="fas fa-graduation-cap"></i>
+                            Transcript
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-btn terminal-btn-close"></span>
+                                <span class="terminal-btn terminal-btn-minimize"></span>
+                                <span class="terminal-btn terminal-btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">aaryan@portfolio:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line" data-delay="0">
+                                <span class="terminal-prompt">aaryan@portfolio:~$</span>
+                                <span class="terminal-command typing-command" data-text="whoami">whoami</span>
+                            </div>
+                            <div class="terminal-output typing-output" data-delay="1">
+                                <span class="terminal-text">aaryanwadhwani</span>
+                            </div>
+                            
+                            <div class="terminal-line" data-delay="2">
+                                <span class="terminal-prompt">aaryan@portfolio:~$</span>
+                                <span class="terminal-command typing-command" data-text="cat ~/.profile">cat ~/.profile</span>
+                            </div>
+                            <div class="terminal-output typing-output" data-delay="3">
+                                <span class="terminal-text">NAME="Aaryan Wadhwani"</span><br>
+                                <span class="terminal-text">ROLE="Software Engineer & Data Scientist"</span><br>
+                                <span class="terminal-text">EDUCATION="Purdue University • CS & AI"</span><br>
+                                <span class="terminal-text">GPA="3.93/4.00"</span>
+                            </div>
+                            
+                            <div class="terminal-line" data-delay="4">
+                                <span class="terminal-prompt">aaryan@portfolio:~$</span>
+                                <span class="terminal-command typing-command" data-text="ls ~/skills/">ls ~/skills/</span>
+                            </div>
+                            <div class="terminal-output typing-output" data-delay="5">
+                                <span class="terminal-text">Languages: Python, C++, JavaScript, Java, TypeScript</span><br>
+                                <span class="terminal-text">Frameworks: React, Node.js, TensorFlow, PyTorch</span><br>
+                                <span class="terminal-text">Cloud: AWS, Docker, Kubernetes, Azure</span><br>
+                                <span class="terminal-text">Tools: Git, Linux, VS Code, Jupyter</span>
+                            </div>
+                            
+                            <div class="terminal-line" data-delay="6">
+                                <span class="terminal-prompt">aaryan@portfolio:~$</span>
+                                <span class="terminal-command typing-command" data-text="./connect.sh">./connect.sh</span>
+                            </div>
+                            <div class="terminal-output typing-output" data-delay="7">
+                                <span class="terminal-text">Connecting to opportunities...</span><br>
+                                <span class="terminal-text success">✅ Available for collaboration!</span>
+                            </div>
+                            
+                            <div class="terminal-line" data-delay="8">
+                                <span class="terminal-prompt">aaryan@portfolio:~$</span>
+                                <span class="terminal-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-main">
+                    <div class="about-left">
+                        <div class="about-text">
+                            <p>
+                                I'm a Computer Science & Artificial Intelligence student passionate about building innovative solutions 
+                                at the intersection of software engineering and machine learning. My expertise spans from low-level 
+                                systems programming to modern web development, with a focus on scalable, high-performance applications.
+                            </p>
+                            <p>
+                                Through various internships and projects, I've developed a comprehensive understanding of full-stack 
+                                development, data engineering, and AI/ML systems. I'm always eager to learn new technologies and 
+                                tackle challenging problems in software engineering and data science.
+                            </p>
+                        </div>
+                        <div class="expertise-under">
+                            <div class="expertise-item">
+                                <i class="fas fa-cloud"></i>
+                                <h4>Cloud Computing</h4>
+                                <p>Scalable cloud solutions and distributed systems</p>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-database"></i>
+                                <h4>Data Engineering</h4>
+                                <p>Efficient data processing and storage solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expertise-side">
+                        <div class="expertise-item">
+                            <i class="fas fa-code"></i>
+                            <h4>Software Development</h4>
+                            <p>Full-stack development with modern frameworks and best practices</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Machine Learning</h4>
+                            <p>Building and deploying ML models for real-world applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2025 - May 2026</div>
+                        <h3 class="timeline-title">Undergraduate Data Scientist</h3>
+                        <div class="timeline-company">Microsoft</div>
+                        <ul class="timeline-description">
+                            <li>Conceptualized and delivered AI-powered outcomes from publicly available datasets related to Minecraft content creation and distribution.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2025 - Dec 2025</div>
+                        <h3 class="timeline-title">Undergraduate Teaching Assistant</h3>
+                        <div class="timeline-company">Purdue University - CS 251 (DSA), CS 253 (DSA for DS/AI Majors)</div>
+                        <ul class="timeline-description">
+                            <li>Guided over 800+ collective students for assignments and project implementations of core algorithms (trees, graphs, heaps, hashmaps). Graded assignments, hosted PSO sessions and office hours for 200+ students.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2025 - Aug 2025</div>
+                        <h3 class="timeline-title">Software Engineering Intern</h3>
+                        <div class="timeline-company">Uniloy Inc.</div>
+                        <ul class="timeline-description">
+                            <li>Built an internal issue-tracking journal and incorporated a fully local RAG pipeline (FAISS, MiniLM, Ollama) to accelerate troubleshooting and reduce repeat queries.</li>
+                            <li>Automated global translation setup with Python scripts, cutting localization effort by over 65%.</li>
+                            <li>Engineered a lightweight server to enable real-time communication (~0.1s) between incompatible control systems.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Oct 2024 - May 2025</div>
+                        <h3 class="timeline-title">Undergraduate Research Assistant | AVL Fast-Hash | Dr. Rodriguez-Rivera</h3>
+                        <div class="timeline-company">Purdue University</div>
+                        <ul class="timeline-description">
+                            <li>Engineered a cache-aware AVL tree achieving 1.3×–2.1× speedups and memory usage over standard C++ implementations on benchmarks with over 500,000 keys using modern computer architecture.</li>
+                            <li>Developed a Google Benchmark micro-suite to compare against Java HashMap, V8 Dictionary, and others.</li>
+                            <li>Integrated AVL-based buckets into hash tables (AVL Fast-Hash) guaranteeing worst case O(logn) operations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024 - Aug 2024</div>
+                        <h3 class="timeline-title">Data Engineering Intern</h3>
+                        <div class="timeline-company">LTIMindtree Ltd.</div>
+                        <ul class="timeline-description">
+                            <li>Implemented Redis-backed caching layer for SharePoint search, cutting median latency 28% for ~2k daily users.</li>
+                            <li>Added CI workflows with GitHub Actions, cutting post-merge defects 35% and accelerating deployment cycles.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2023 - May 2024</div>
+                        <h3 class="timeline-title">Undergraduate Data Scientist</h3>
+                        <div class="timeline-company">Caterpillar Inc.</div>
+                        <ul class="timeline-description">
+                            <li>Scraped, cleaned, and joined over 60 years of global supply-chain data (2,000,000×40 entries) on 7+ key indicators.</li>
+                            <li>Trained PyCaret + Prophet pipeline approximating project related risks based on this 60-year series.</li>
+                            <li>Created an interactive PowerBI dashboard delivering live data, and real-time feedback about supply chain issues.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2023 - Jul 2023</div>
+                        <h3 class="timeline-title">Web Developer Intern</h3>
+                        <div class="timeline-company">WB Hotels & Resorts</div>
+                        <ul class="timeline-description">
+                            <li>Shipped responsive awards page (React + Tailwind) and merged into website, showing company achievements.</li>
+                            <li>Integrated Google Places search, reducing home-page bounce rate by over 12%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">StockSage AI</h3>
+                        <ul class="project-description">
+                            <li>Built an ensemble forecasting pipeline (LSTM, XGBoost, ARIMA) with 10+ indicators (e.g. RSI, MACD, Bollinger Bands), achieving 89.5% accuracy, and 5% above the best single model.</li>
+                            <li>Incorporated real-time sentiment scoring (NLTK/TextBlob) using NewsAPI boosting model performance by 30%.</li>
+                            <li>Developed a Plotly Dash dashboard featuring live data streams, dynamic model presets, and a 5-min TTL cache.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">TensorFlow/Keras</span>
+                            <span class="project-tag">scikit-learn</span>
+                            <span class="project-tag">Prophet</span>
+                            <span class="project-tag">NLTK/TextBlob</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Systems Projects</h3>
+                        <ul class="project-description">
+                            <li><strong>POSIX Shell:</strong> Implemented job control, pipelines, background execution, subshells, wildcard expansion, tab completion, and command history; passed 78 unit tests with 100% success.</li>
+                            <li><strong>Simple-C Compiler:</strong> Parses C code and generates optimized x86-64 Assembly while achieving times 5-15% faster than GCC and Clang.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Bash</span>
+                            <span class="project-tag">Flex</span>
+                            <span class="project-tag">Bison</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AtariRL</h3>
+                        <ul class="project-description">
+                            <li>Implemented a PyTorch DQN framework for 50+ OpenAI Gym Atari games with experience replay and target-network updates with automated checkpointing every 1,000 episodes for seamlessness.</li>
+                            <li>Logged rewards, losses, and exploration rate to TensorBoard for real-time hyperparameter tuning and monitoring.</li>
+                            <li>Created advanced visualizations to expose which game regions drove the agent's decisions and other analysis.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">TensorBoard</span>
+                            <span class="project-tag">OpenAI Gym</span>
+                            <span class="project-tag">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Coursework Section -->
+    <section id="coursework" class="coursework">
+        <div class="container">
+            <h2 class="section-title">Academic Coursework</h2>
+            <div class="coursework-container">
+                <div class="coursework-category">
+                    <h3><i class="fas fa-microchip"></i> Computer Science Core</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-code">CS 25100</div>
+                            <div class="course-name">Data Structures and Algorithms</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 25000</div>
+                            <div class="course-name">Computer Architecture</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 25200</div>
+                            <div class="course-name">Systems Programming</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 35400</div>
+                            <div class="course-name">Operating Systems</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 18200</div>
+                            <div class="course-name">Foundations of Comp Sci</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 18000</div>
+                            <div class="course-name">Prob Solving & O-O Programming</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 24000</div>
+                            <div class="course-name">Programming in C</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 29100</div>
+                            <div class="course-name">Soph Development</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coursework-category">
+                    <h3><i class="fas fa-rocket"></i> Advanced Computer Science</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-code">CS 39000-ATC</div>
+                            <div class="course-name">Adv Topics Comp Architecture I</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 39000-ATA</div>
+                            <div class="course-name">Advanced Topics in Algorithms</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 21100</div>
+                            <div class="course-name">Competitive Programming I</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 57700</div>
+                            <div class="course-name">Natural Language Processing</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 45800</div>
+                            <div class="course-name">Intro to Robotics</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 39699</div>
+                            <div class="course-name">Prof Practice</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coursework-category">
+                    <h3><i class="fas fa-database"></i> Data Science & Engineering</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-code">CS 17600</div>
+                            <div class="course-name">Data Engineering in Python</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 43900</div>
+                            <div class="course-name">Intro to Data Visualization</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 43800</div>
+                            <div class="course-name">Information Systems</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">CS 19300</div>
+                            <div class="course-name">Tools</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coursework-category">
+                    <h3><i class="fas fa-calculator"></i> Mathematics</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-code">MA 34100</div>
+                            <div class="course-name">Foundations Analysis</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">MA 26500</div>
+                            <div class="course-name">Linear Algebra</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">MA 26100</div>
+                            <div class="course-name">Multivariate Calculus</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">MA 41600</div>
+                            <div class="course-name">Probability</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">STAT 35000</div>
+                            <div class="course-name">Intro to Statistics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coursework-category">
+                    <h3><i class="fas fa-graduation-cap"></i> Humanities & Social Sciences</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <div class="course-code">PHIL 20800</div>
+                            <div class="course-name">Ethics of Data Science</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">PHIL 22100</div>
+                            <div class="course-name">Intro Philosophy Sci</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">PSY 12000</div>
+                            <div class="course-name">Elementary Psychology</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">PSY 20000</div>
+                            <div class="course-name">Intro Cogn Psych</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">SOC 10000</div>
+                            <div class="course-name">Intro Sociology</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">POL 22300</div>
+                            <div class="course-name">Intr Environmental Pol</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">ENGL 10600</div>
+                            <div class="course-name">First-Year Composition</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-code">COM 21700</div>
+                            <div class="course-name">Science Writing and Presentation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages & Core Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">C++</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">C</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Python</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">JavaScript</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">TypeScript</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Java</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Assembly</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">React</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web Development & Frameworks</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">Node.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Express.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Next.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">HTML5</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">CSS3</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Tailwind CSS</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">FastAPI</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Flask</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">PyTorch</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">TensorFlow</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Scikit Learn</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">NumPy</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Pandas</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">OpenAI</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Hugging Face</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">XGBoost</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">Docker</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Docker Compose</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">GitHub Actions</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">AWS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">PyTorch</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">scikit-learn</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Prophet</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">TensorFlow/Keras</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">Git</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Linux</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">GDB</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Flex/Bison</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">pytest</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Jest</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">Ready to collaborate? Let's build something amazing together.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:wadhwani.aaryand@gmail.com">wadhwani.aaryand@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/aaryan-wadhwani-b0481a248" target="_blank">aaryan-wadhwani</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/aaryanwadhwani" target="_blank">aaryanwadhwani</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+17736398268">+1 (773) 639-8268</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>Thanks for visiting my portfolio! Let's build something amazing together.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#experience" class="footer-link">Experience</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#coursework" class="footer-link">Coursework</a>
+                <a href="#skills" class="footer-link">Skills</a>
+                <a href="#contact" class="footer-link">Contact</a>
+                <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/Aaryan_Wadhwani_Fall_AiCsUg_25.pdf" target="_blank" class="footer-link">
+                    <i class="fas fa-file-alt"></i>
+                    Resume
+                </a>
+                <a href="https://raw.githubusercontent.com/aaryanwadhwani/aaryanwadhwani/main/resources/transcript.pdf" target="_blank" class="footer-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    Transcript
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with ❤️ and coffee</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
