@@ -53,17 +53,22 @@ backToTopBtn.addEventListener('click', () => {
 // Smooth scrolling for navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        // Only prevent default for internal links (starting with #)
+        if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // For external links (resume, transcript), let the browser handle them normally
     });
 });
 
@@ -746,9 +751,14 @@ function smoothScrollTo(target) {
 // Enhanced navigation with smooth scrolling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const target = link.getAttribute('href');
-        smoothScrollTo(target);
+        
+        // Only prevent default for internal links (starting with #)
+        if (target && target.startsWith('#')) {
+            e.preventDefault();
+            smoothScrollTo(target);
+        }
+        // For external links (resume, transcript), let the browser handle them normally
     });
 });
 
