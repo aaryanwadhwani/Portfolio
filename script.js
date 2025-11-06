@@ -160,31 +160,44 @@ document.querySelectorAll('.skill-progress').forEach(bar => {
 });
 
 // Contact form handling
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Simple validation
-    if (!name || !email || !subject || !message) {
-        showNotification('Please fill in all fields', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showNotification('Please enter a valid email address', 'error');
-        return;
-    }
-    
-    // Simulate form submission
-    showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // Simple validation
+        if (!name || !email || !subject || !message) {
+            showNotification('Please fill in all fields', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // Build mailto link with encoded parameters
+        const recipientEmail = 'wadhwani.aaryand@gmail.com';
+        const encodedSubject = encodeURIComponent(subject);
+        const emailBody = `From: ${name} (${email})\n\n${message}`;
+        const encodedBody = encodeURIComponent(emailBody);
+        
+        // Create mailto link
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success notification
+        showNotification('Opening your email client...', 'success');
+    });
+}
 
 // Email validation
 function isValidEmail(email) {
