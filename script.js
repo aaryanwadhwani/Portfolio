@@ -50,6 +50,38 @@ backToTopBtn.addEventListener('click', () => {
     });
 });
 
+// Enhanced smooth scrolling function with easing
+function smoothScrollToElement(targetId, offset = 70) {
+    const targetElement = document.querySelector(targetId);
+    if (!targetElement) return;
+    
+    const targetPosition = targetElement.offsetTop - offset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 800; // Animation duration in milliseconds
+    let start = null;
+    
+    function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1); // 0 to 1
+        
+        // Easing function (ease-in-out cubic)
+        const easeProgress = progress < 0.5 
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        const currentPosition = startPosition + (distance * easeProgress);
+        window.scrollTo(0, currentPosition);
+        
+        if (progress < 1) {
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    requestAnimationFrame(animation);
+}
+
 // Smooth scrolling for navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -58,15 +90,7 @@ navLinks.forEach(link => {
         // Only prevent default for internal links (starting with #)
         if (targetId && targetId.startsWith('#')) {
             e.preventDefault();
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
+            smoothScrollToElement(targetId, 70);
         }
         // For external links (resume, transcript), let the browser handle them normally
     });
@@ -732,48 +756,12 @@ function initTerminalAnimation() {
     setTimeout(animateStep, 1000);
 }
 
-// Performance optimization: Use requestAnimationFrame for smooth animations
+// Legacy smoothScrollTo function - now uses the enhanced version
 function smoothScrollTo(target) {
-    const targetElement = document.querySelector(target);
-    if (!targetElement) return;
-    
-    const targetPosition = targetElement.offsetTop - 70;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000;
-    let start = null;
-    
-    function animation(currentTime) {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-    
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-    
-    requestAnimationFrame(animation);
+    smoothScrollToElement(target, 70);
 }
 
-// Enhanced navigation with smooth scrolling
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const target = link.getAttribute('href');
-        
-        // Only prevent default for internal links (starting with #)
-        if (target && target.startsWith('#')) {
-            e.preventDefault();
-            smoothScrollTo(target);
-        }
-        // For external links (resume, transcript), let the browser handle them normally
-    });
-});
+// Enhanced navigation with smooth scrolling (duplicate handler removed - using the one above)
 
 // Add CSS for floating particles
 const style = document.createElement('style');
